@@ -11,11 +11,13 @@ import {
   Box,
   Check,
   CircleHelp,
+  CreditCard,
   Home as HomeIcon,
   IndianRupee,
   RotateCcw,
   ShieldCheck,
   Sparkles,
+  Smartphone,
   Truck,
 } from 'lucide-react';
 import {
@@ -28,6 +30,7 @@ import {
 const queryClient = new QueryClient();
 
 type HomeSize = '1 BHK' | '2 BHK' | '3 BHK' | '4+ BHK';
+type PaymentMethod = 'debit' | 'credit' | 'upi';
 
 const homeOptions: Array<{ value: HomeSize; note: string; icon: typeof HomeIcon }> = [
   { value: '1 BHK', note: 'Compact move', icon: HomeIcon },
@@ -42,6 +45,17 @@ const baseFares: Record<HomeSize, number> = {
   '3 BHK': 8500,
   '4+ BHK': 11500,
 };
+
+const paymentOptions: Array<{
+  value: PaymentMethod;
+  label: string;
+  note: string;
+  icon: typeof CreditCard;
+}> = [
+  { value: 'debit', label: 'Debit card', note: 'Visa, Mastercard', icon: CreditCard },
+  { value: 'credit', label: 'Credit card', note: 'Visa, Mastercard', icon: CreditCard },
+  { value: 'upi', label: 'UPI', note: 'GPay, PhonePe, more', icon: Smartphone },
+];
 
 const formatRupees = (amount: number) =>
   new Intl.NumberFormat('en-IN', {
@@ -82,6 +96,7 @@ function Estimator() {
   const [confirmed, setConfirmed] = useState(false);
   const [reference, setReference] = useState('');
   const [copied, setCopied] = useState(false);
+  const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>('upi');
 
   const estimate = useMemo(() => {
     if (!homeSize || !distance) return null;
@@ -135,6 +150,7 @@ function Estimator() {
     setConfirmed(false);
     setReference('');
     setCopied(false);
+    setPaymentMethod('upi');
     setErrors({});
   };
 
@@ -155,6 +171,10 @@ function Estimator() {
           <div className="success-mark"><BadgeCheck size={31} strokeWidth={1.8} /></div>
           <h3 className="success-title">Thanks, {name.split(' ')[0]}.</h3>
           <p className="success-copy">Your request is safely with our moving team. Keep this reference handy.</p>
+          <div className="success-payment">
+            <span className="success-payment-label">Payment preference</span>
+            <strong>{paymentOptions.find((option) => option.value === paymentMethod)?.label}</strong>
+          </div>
           <div className="reference-box">
             <span className="reference-label">Request reference</span>
             <span className="reference-value" data-testid="text-booking-reference">{reference}</span>
@@ -296,6 +316,30 @@ function Estimator() {
                 </div>
               </div>
               <p className="helper-text" style={{ marginTop: 14 }}>This is a starting estimate. Your final quote may vary for stairs, lifts, or special items.</p>
+              <fieldset className="payment-fieldset">
+                <legend className="form-label">Preferred payment method</legend>
+                <p className="helper-text payment-helper">Choose how you’d prefer to pay when your move is confirmed.</p>
+                <div className="payment-options" role="radiogroup" aria-label="Preferred payment method">
+                  {paymentOptions.map(({ value, label, note, icon: Icon }) => (
+                    <button
+                      type="button"
+                      key={value}
+                      className={`payment-option ${paymentMethod === value ? 'selected' : ''}`}
+                      onClick={() => setPaymentMethod(value)}
+                      aria-pressed={paymentMethod === value}
+                      data-testid={`button-payment-${value}`}
+                    >
+                      <span className="payment-icon"><Icon size={17} strokeWidth={1.8} /></span>
+                      <span className="payment-copy">
+                        <strong>{label}</strong>
+                        <small>{note}</small>
+                      </span>
+                      <span className="payment-check" aria-hidden="true">{paymentMethod === value ? <Check size={13} strokeWidth={3} /> : null}</span>
+                    </button>
+                  ))}
+                </div>
+                <span className="payment-note">No payment is processed at this stage.</span>
+              </fieldset>
               <button className="primary-btn" type="button" onClick={confirmBooking} data-testid="button-confirm-booking">
                 Confirm booking request <Check size={17} />
               </button>

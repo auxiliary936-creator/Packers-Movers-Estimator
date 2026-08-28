@@ -182,11 +182,26 @@
 .breakdown-row { display: flex; justify-content: space-between; font-size: .76rem; }
 .breakdown-row span:first-child { opacity: .75; }
 .details-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.payment-fieldset { border: 0; padding: 0; margin: 25px 0 0; }
+.payment-helper { margin-top: -4px; }
+.payment-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 13px; }
+.payment-option { appearance: none; border: 1px solid hsl(var(--border)); border-radius: 12px; background: hsl(var(--background) / .58); color: hsl(var(--foreground)); min-height: 76px; padding: 10px; display: flex; align-items: center; gap: 9px; text-align: left; position: relative; transition: border-color .2s ease, background-color .2s ease, transform .2s ease, box-shadow .2s ease; }
+.payment-option:hover { border-color: hsl(var(--primary) / .65); transform: translateY(-2px); }
+.payment-option.selected { background: hsl(var(--secondary) / .8); border-color: hsl(var(--primary)); box-shadow: 0 5px 12px hsl(var(--primary) / .10); }
+.payment-icon { width: 29px; height: 29px; flex: 0 0 auto; border-radius: 9px; display: grid; place-items: center; color: hsl(var(--primary)); background: hsl(var(--card)); }
+.payment-option.selected .payment-icon { color: hsl(var(--accent)); }
+.payment-copy { min-width: 0; display: grid; gap: 3px; }
+.payment-copy strong { font-size: .72rem; line-height: 1.2; }
+.payment-copy small { color: hsl(var(--muted-foreground)); font-size: .58rem; line-height: 1.2; }
+.payment-check { position: absolute; right: 7px; top: 7px; width: 16px; height: 16px; display: grid; place-items: center; border-radius: 50%; background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); }
+.payment-note { display: block; margin-top: 9px; color: hsl(var(--muted-foreground)); font-size: .65rem; }
 .section-heading { font-family: var(--app-font-serif); font-size: 1.5rem; letter-spacing: -.04em; margin: 0 0 16px; }
 .success-state { text-align: center; padding: 26px 0 4px; animation: rise-in .45s ease both; }
 .success-mark { width: 62px; height: 62px; display: grid; place-items: center; background: hsl(var(--secondary)); color: hsl(var(--primary)); border-radius: 50%; margin: 0 auto 17px; }
 .success-title { font-family: var(--app-font-serif); font-size: 2.1rem; letter-spacing: -.045em; margin: 0 0 8px; }
 .success-copy { color: hsl(var(--muted-foreground)); font-size: .87rem; line-height: 1.55; }
+.success-payment { display: inline-flex; align-items: center; gap: 8px; margin-top: 15px; padding: 8px 12px; border-radius: 999px; background: hsl(var(--secondary) / .8); color: hsl(var(--primary)); font-size: .72rem; }
+.success-payment-label { color: hsl(var(--muted-foreground)); }
 .reference-box { background: hsl(var(--background)); border: 1px dashed hsl(var(--primary) / .4); border-radius: 12px; padding: 14px; margin: 22px 0; }
 .reference-label { display: block; color: hsl(var(--muted-foreground)); font-size: .67rem; text-transform: uppercase; letter-spacing: .1em; }
 .reference-value { color: hsl(var(--primary)); font-weight: 700; letter-spacing: .12em; font-size: 1rem; margin-top: 4px; }
@@ -226,6 +241,8 @@
   .home-option { min-height: 76px; border-radius: 11px; }
   .home-option strong { font-size: .77rem; }
   .home-option small { font-size: .57rem; }
+  .payment-options { grid-template-columns: 1fr; }
+  .payment-option { min-height: 58px; }
   .estimator-card { border-radius: 20px; padding: 21px 17px; }
   .progress-step { gap: 5px; font-size: .64rem; }
   .progress-connector { margin: 0 4px; }
