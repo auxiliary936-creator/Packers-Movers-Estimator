@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Packers & Movers Estimator"
+description = "A standalone moving fare estimator for customers in India. Users choose a property size, enter distance and contact details, receive a transparent estimate, and confirm a booking request."
+version = "1.0.0"
+id = "artifacts/packers-movers-estimator"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24877
+
+[services.development]
+run = "pnpm --filter @workspace/packers-movers-estimator run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/packers-movers-estimator", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/packers-movers-estimator/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24877"
+BASE_PATH = "/"

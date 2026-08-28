@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Packers & Movers Estimator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app-wrapper">
+    <div class="card">
+      <header class="card-header">
+        <h1>Packers & Movers</h1>
+        <p>Calculate estimated fare & book instantly</p>
+      </header>
+
+      <form id="calcForm" class="form" novalidate>
+        <div class="field">
+          <label for="houseType">Select Property Size</label>
+          <select id="houseType">
+            <option value="3000">1 BHK (Base Fare: ₹3,000)</option>
+            <option value="5000">2 BHK (Base Fare: ₹5,000)</option>
+            <option value="8000">3 BHK (Base Fare: ₹8,000)</option>
+            <option value="12000">Villa / Large Office (Base Fare: ₹12,000)</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="distance">Distance (in KM)</label>
+          <input type="number" id="distance" min="1" step="1" placeholder="e.g. 25" required />
+          <p class="error-text" id="distanceError">Enter a distance greater than 0.</p>
+        </div>
+
+        <div class="field">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" placeholder="Enter your full name" required />
+          <p class="error-text" id="nameError">Please enter your name.</p>
+        </div>
+
+        <div class="field">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" placeholder="Enter 10-digit mobile number" required maxlength="10" />
+          <p class="error-text" id="phoneError">Enter a valid 10-digit mobile number.</p>
+        </div>
+
+        <button type="button" id="calcBtn" class="btn btn-primary">Calculate Fare</button>
+      </form>
+
+      <section id="result" class="result-box hidden">
+        <p class="result-label">Total Estimated Cost:</p>
+        <p id="totalPrice" class="result-price">₹0</p>
+        <p id="breakdown" class="result-breakdown"></p>
+        <button id="confirmBtn" class="btn btn-success">Confirm Booking</button>
+      </section>
+
+      <section id="bookingConfirmed" class="confirmation-box hidden"></section>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
