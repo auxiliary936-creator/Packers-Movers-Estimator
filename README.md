@@ -1,8 +1,16 @@
-# Packerswise
+<div align="center">
+  <h1>Packerswise</h1>
+  <p><strong>A calmer way to move home.</strong></p>
+  <p>One clear moving estimate for household moves across India — without the phone-call runaround.</p>
+  <p>
+    <img src="https://img.shields.io/badge/React-19-123F3B?style=for-the-badge&logo=react&logoColor=F6F0E5" alt="React 19" />
+    <img src="https://img.shields.io/badge/TypeScript-Ready-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+    <img src="https://img.shields.io/badge/Vite-Fast-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" />
+    <img src="https://img.shields.io/badge/Frontend--first-ED7655?style=for-the-badge" alt="Frontend first" />
+  </p>
+</div>
 
-### A calmer way to move home.
-
-Packerswise is a warm, focused moving-fare estimator for household moves across India. It turns a stressful first quote into one clear number: choose a home size, add the distance, share your details, and get a transparent starting fare in under a minute.
+Packerswise turns a stressful first quote into one clear number: choose a home size, add the distance, share your details, and get a transparent starting fare in under a minute.
 
 <p align="center">
   <img src="docs/tech-stack-loop.svg" alt="Infinity loop connecting the Packerswise technology stack" width="100%" />
@@ -19,6 +27,10 @@ Packerswise is a warm, focused moving-fare estimator for household moves across 
 </p>
 
 ---
+
+## Built around clarity
+
+The experience follows the emotional rhythm of moving day: reduce the unknowns, show the math, then make the next step feel easy. The animated stack loop above mirrors that idea — the product and its tools keep moving forward together.
 
 ## Features
 
