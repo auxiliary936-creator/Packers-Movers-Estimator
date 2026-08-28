@@ -1,0 +1,63 @@
+<svg width="1200" height="330" viewBox="0 0 1200 330" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Packerswise technology stack</title>
+  <desc id="desc">An infinity loop connecting React, TypeScript, Vite, Tailwind CSS, Lucide, Wouter, and pnpm.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="330" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#123F3B"/>
+      <stop offset="1" stop-color="#1B655A"/>
+    </linearGradient>
+    <linearGradient id="loop" x1="270" y1="69" x2="945" y2="267" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F4B36B"/>
+      <stop offset=".52" stop-color="#F07955"/>
+      <stop offset="1" stop-color="#B8D58D"/>
+    </linearGradient>
+    <filter id="shadow" x="150" y="15" width="900" height="300" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#082D2A" flood-opacity=".35"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="330" rx="28" fill="url(#bg)"/>
+  <circle cx="1060" cy="43" r="100" fill="#F4B36B" fill-opacity=".08"/>
+  <circle cx="91" cy="302" r="130" fill="#B8D58D" fill-opacity=".07"/>
+
+  <g filter="url(#shadow)">
+    <path d="M247 165C247 107 293 70 351 70C407 70 449 105 499 165C549 225 593 260 651 260C709 260 753 225 802 165C851 105 895 70 950 70C1008 70 1053 107 1053 165C1053 223 1008 260 950 260C895 260 851 225 802 165C753 105 709 70 651 70C593 70 549 105 499 165C449 225 407 260 351 260C293 260 247 223 247 165Z" stroke="#082D2A" stroke-opacity=".32" stroke-width="27" stroke-linecap="round"/>
+    <path d="M247 165C247 107 293 70 351 70C407 70 449 105 499 165C549 225 593 260 651 260C709 260 753 225 802 165C851 105 895 70 950 70C1008 70 1053 107 1053 165C1053 223 1008 260 950 260C895 260 851 225 802 165C753 105 709 70 651 70C593 70 549 105 499 165C449 225 407 260 351 260C293 260 247 223 247 165Z" stroke="url(#loop)" stroke-width="11" stroke-linecap="round"/>
+  </g>
+
+  <g font-family="Arial, Helvetica, sans-serif" text-anchor="middle">
+    <text x="600" y="42" fill="#F6F0E5" font-size="13" font-weight="700" letter-spacing="3">PACKERSWISE / THE STACK</text>
+    <text x="600" y="177" fill="#F6F0E5" font-size="26" font-weight="700" letter-spacing=".2">Built for a clearer move</text>
+
+    <g font-size="14" font-weight="700">
+      <g transform="translate(352 70)">
+        <circle r="34" fill="#F6F0E5"/>
+        <text y="5" fill="#123F3B">React</text>
+      </g>
+      <g transform="translate(499 165)">
+        <circle r="34" fill="#F6F0E5"/>
+        <text y="5" fill="#123F3B">TypeScript</text>
+      </g>
+      <g transform="translate(651 260)">
+        <circle r="34" fill="#F6F0E5"/>
+        <text y="5" fill="#123F3B">Vite</text>
+      </g>
+      <g transform="translate(802 165)">
+        <circle r="34" fill="#F6F0E5"/>
+        <text y="5" fill="#123F3B">Tailwind</text>
+      </g>
+      <g transform="translate(950 70)">
+        <circle r="34" fill="#F6F0E5"/>
+        <text y="5" fill="#123F3B">Lucide</text>
+      </g>
+      <g transform="translate(950 260)">
+        <circle r="34" fill="#F6F0E5"/>
+        <text y="5" fill="#123F3B">Wouter</text>
+      </g>
+      <g transform="translate(351 260)">
+        <circle r="34" fill="#F6F0E5"/>
+        <text y="5" fill="#123F3B">pnpm</text>
+      </g>
+    </g>
+  </g>
+</svg>
